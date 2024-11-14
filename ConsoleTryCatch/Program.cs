@@ -5,22 +5,25 @@ namespace ConsoleTryCatch {
     class Program {
         static void Main()
         {
-            int valor1 = int.Parse(Console.ReadLine());
-            int valor2 = int.Parse(Console.ReadLine()); 
+            int valor1 = 0;
+            int valor2 = 0;
             int result = 0;
             try
-            { 
-                result = valor1 / valor2;              
+            {
+                valor1 = int.Parse(Console.ReadLine());
+                valor2 = int.Parse(Console.ReadLine());
+                result = valor1 / valor2;
 
             }
             catch (DivideByZeroException e) // using Upcasting by Exception class and call DivideByZeroException
             {
-                Console.WriteLine($"Ocorreu o seguinte erro: {e.Message} \n linha do erro: {e.StackTrace}"); 
+                Console.WriteLine($"Divisão por zero(0) não é permitida.\n linha do erro: {e.StackTrace}");
             }
-
+            catch (FormatException e)
+            {
+                Console.WriteLine($"Apenas números são permitidos.\n linha do erro{e.StackTrace}");
+            }
             Console.WriteLine("Valor da divisão:" + result.ToString("F2", CultureInfo.InvariantCulture));
-
-
-        }
+        }        
     }
 }
