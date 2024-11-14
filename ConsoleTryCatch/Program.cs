@@ -5,8 +5,8 @@ namespace ConsoleTryCatch {
     class Program {
         static void Main()
         {
-            int valor1 = 0;
-            int valor2 = 0;
+            int valor1;
+            int valor2;
             int result = 0;
             try
             {
