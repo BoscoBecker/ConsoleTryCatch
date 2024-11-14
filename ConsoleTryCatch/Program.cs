@@ -23,7 +23,11 @@ namespace ConsoleTryCatch {
             {
                 Console.WriteLine($"Apenas números são permitidos.\n linha do erro{e.StackTrace}");
             }
-            Console.WriteLine("Valor da divisão:" + result.ToString("F2", CultureInfo.InvariantCulture));
+            
+            finally{
+                Console.WriteLine("Valor da divisão:" + result.ToString("F2", CultureInfo.InvariantCulture));
+                Console.WriteLine("Finalizou o programa usando finally.");
+            }
         }        
     }
 }
